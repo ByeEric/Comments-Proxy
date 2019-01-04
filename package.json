@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack -w",
-    "test": "jest --detectOpenHandles"
+    "go-server": "go run server.go",
+    "node-server": "node server.js",
+    "test": "jest --detectOpenHandles",
+    "start": "npm install; webpack"
   },
   "repository": {
     "type": "git",

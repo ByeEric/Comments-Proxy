@@ -5,8 +5,6 @@ const styles = {
   // UI Button Component Main
   uiButton: {
     base: {
-      width:'75px',
-      height:'30px',
       outline:'none',
       borderRadius:'5px',
       borderWidth:'1px',
@@ -15,7 +13,7 @@ const styles = {
       fontFamily:'Raleway, sans-serif',
       transitionDuration:'0.3s',
       cursor:'pointer',
-      display:'inline-block'
+      display:'inline-block',
     }, 
     primary: {
       display:'inline-block',
@@ -138,6 +136,52 @@ const styles = {
       display:'inline-block',
       ":hover": {
         backgroundColor:'#0074D9',
+        color:'white'
+      },
+    },
+  },
+  // back button
+  back:{
+    base:{
+      cursor:'pointer',
+      height:'30px',
+      margin:'3px',
+      transitionDuration:'0.2s',
+      color:'black',
+      fontSize:'28px',
+      display:'inline-block',
+      ":hover": {
+        color:'#FF4136',
+      },
+    }
+  },
+  // div wrapper
+  div: {
+    base: {
+      margin:'10px',
+      padding:'0%'
+    }
+  },
+  // finish button
+  finish: {
+    base: {
+      width:'214px',
+      height:'35px',
+      outline:'none',
+      margin:'10px 0px 0px 4px',
+      borderRadius:'5px',
+      borderWidth:'1px',
+      borderColor:'#FFA500',
+      fontSize:'19px',
+      fontFamily:'Raleway, sans-serif',
+      transitionDuration:'0.3s',
+      cursor:'pointer',
+      display:'inline-block',
+    }, 
+    primary: {
+      display:'inline-block',
+      ":hover": {
+        backgroundColor:'#FFA500',
         color:'white'
       },
     },

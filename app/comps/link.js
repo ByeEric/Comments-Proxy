@@ -1,52 +1,52 @@
 import React, { PureComponent } from 'react';
 import Radium from 'radium';
-import PropsTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from '../styles';
 
 // a generic / standard Button used to standardize buttons
+
 // takes a text |string| #
 // takes a func |function| #
-// takes a size |string|
-class Link extends PureComponent {
-  constructor (props) {
-    super(props);
-    this.size; // if porps.size was passed in, override the set size
-    props.size ? this.size = props.size : this.size = '14px';
-  }
+// takes a special |object|
+// takes a specialDiv |object|
 
-  render () {
-    return (
-      <div style={[
-        styles.uiLinkDiv.base,
-        styles.uiLinkDiv.primary
-      ]}>
+// special props are objects containing inline css 
+// used to do special styling on generic comps
+
+// a generic / standard Link used to standardize Links
+let Link = (props) => {
+  return (
+    <div style={[
+      styles.uiLinkDiv.base,
+      props.specialDiv
+    ]}>
       <em>
         <a
         className='ui-link'
-        href={this.props.link ? this.props.link : null}
+        href={props.link ? props.link : null}
         target={'_blank'}
         style={[
           styles.uiLink.base,
-          styles.uiLink.primary,
-          {fontSize:this.size}
+          props.special
         ]}
-        >{this.props.text}
+        >{props.text}
         </a>
-        </em>
-      </div>
-    )
-  }
+      </em>
+    </div>
+  )
 }
 
 Link.propTypes = {
   // what the anchor says
-  text: PropsTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   // what the anchor does
-  func: PropsTypes.func,
+  func: PropTypes.func,
   // where it goes
-  link: PropsTypes.string,
-  // what size the link is
-  size: PropsTypes.string
+  link: PropTypes.string,
+  // special css 
+  special: PropTypes.object,
+  // special div css
+  specialDiv: PropTypes.object
 }
 
 // radium allows for a style array

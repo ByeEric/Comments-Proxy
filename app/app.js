@@ -1,79 +1,84 @@
+// NPM Modules
 import React, { Component, PureComponent } from 'react';
 import ReactDOM from 'react-dom';
+import Axios from 'axios';
+import Radium from 'radium';
+
+// React components from files
+import styles from './styles';
+import Disclaimer from './comps/disc';
+import Option from './comps/option';
+import Options from './comps/options';
 import Button from './comps/button';
 import Link from './comps/link';
 import Buy from './comps/buy';
 import Title from './comps/title';
-import Axios from 'axios';
-import styles from './styles';
-import Radium from 'radium';
-import Disclaimer from './comps/disc';
-import Option from './comps/option';
 
+// Root component
 class App extends PureComponent {
   constructor (props) {
     super(props);
     this.state = {
-      pet_id: "2111",
+      pet_id: "10166",
       pet: {
-        "pet_id":"2111",
-        "class":"Aves",
-        "family":"Struthionidae",
-        "genus":"Struthio",
-        "species":"Ostrich",
-        "price":"11,000",
+        "pet_id":"9999",
+        "class":"Loading...",
+        "family":"Loading...",
+        "genus":"Loading...",
+        "species":"Loading...",
+        "price":".Loading.."
       },
       buy: true
     };
 
     // bind(this);
     this.getPet = this.getPet.bind(this);
-    this.print = this.print.bind(this);
     this.showBuy = this.showBuy.bind(this);
     // *** *** *** *** *** *** *** *** ***
-
   }
 
   getPet () { // server get request for pet object
-    Axios.get('http://localhost:4000/buy', {
+    Axios.get('http://ec2-3-17-59-254.us-east-2.compute.amazonaws.com:4002/buy', {
       headers: {
         "pet_id":this.state.pet_id
       }
-    })
-    .then(res => {
+    }).then(res => {
+      console.table(res.data);
       this.setState({
         pet:res.data
       })
     })
   }
 
-  print (text) { // print function
-    console.log(text);
-  }
-
-  showBuy () {
+  showBuy () { // toggle purchase options
     this.setState({buy:!this.state.buy});
   }
 
+  componentDidMount () { // get current pet data on mount
+    this.getPet();
+  }
+
   render () {
-    if(this.state.buy) {
-      return (
-        <div style={{width:'100%'}}>
+    // Show product info
+    return (
+      <div>
+        <div hidden={!this.state.buy} style={[styles.div.base,{width:'100%'}]}>
           <Title pet={this.state.pet}/>
           <Buy price={this.state.pet.price} func={this.showBuy}/>
           <Disclaimer />
         </div>
-      )
-    } else {
-      return (
-        <div style={{width:'100%'}}>
-          <button style={[styles.toggle.base, styles.toggle.primary]} onClick={this.showBuy}>back</button>
-          <Link text={this.state.pet.species} size={'26px'} link={`https://en.wikipedia.org/wiki/${this.state.pet.species}`}/>
-          <Option o1={'male'} o2={'female'}/>
+      
+
+        {/* show purchase options: */}
+        <div hidden={this.state.buy} style={[styles.div.base,{width:'100%'}]}> 
+          <Options pet={this.state.pet} showBuy={this.showBuy}/>
         </div>
-      )
-    }
+      </div>
+    )
   }
 }
 
+App = Radium(App);
+
+// ReactDOM Render function
 ReactDOM.render(<App />, document.getElementById('root'));
