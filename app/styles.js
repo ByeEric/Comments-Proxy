@@ -83,7 +83,11 @@ const styles = {
   // disclaimer Main
   disclaimer: {
     base: {
-
+      fontFamily:'Thasadith, sans-serif',
+      fontSize:'12px',
+      fontWeigth:'500',
+      width:'60%',
+      margin:'10px',
     },
   },
   // disclaimer Div
@@ -158,7 +162,7 @@ const styles = {
       marginTop:'50px',
       display:'inline-block',
       width:'30%',
-      height:'500px',
+      height:'100%',
     }
   },
   logo: {
@@ -174,18 +178,18 @@ const styles = {
     base: {
       marginLeft:'10%',
       display:'inline',
-      borderRadius:'30px',
     }
   },
   petImage: {
     base: {
       display:'inline-block',
-      borderRadius:'5%',
+      borderRadius:'20px',
     }
   },
   description: {
     base: {
       width:'50%',
+      marginTop:'20px',
       marginLeft:'15%',
       fontFamily:'Raleway, sans-serif',
       fontSize:'14px',
@@ -195,7 +199,13 @@ const styles = {
       display:'inline-block',
       float:'left',
       width:'70%',
-      height:'500px',
+      height:'100%',
+    }
+  },
+  product: {
+    base: {
+      marginTop:'30px',
+      marginBottom:'100px',
     }
   }
 }
