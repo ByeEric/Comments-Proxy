@@ -24,10 +24,10 @@ class Option extends PureComponent {
 
   componentDidMount () { // sets default 'start' options
     if(this.props.default === 'one') {
-      this.setState({o1State:true,o1Background:'#0074D9',o1Color:'white'})
+      this.setState({o1State:true,o1Background:'#4cc1df',o1Color:'white'})
     } 
     else if (this.props.default === 'two') {
-      this.setState({o2State:true,o2Background:'#0074D9',o2Color:'white'})
+      this.setState({o2State:true,o2Background:'#4cc1df',o2Color:'white'})
     } 
   }
 
@@ -35,7 +35,7 @@ class Option extends PureComponent {
     // Target One
     if(target === 'one') {
       if(!this.state.o1State) {
-        this.setState({o1Background:'#0074D9',o1Color:'white',o1State:!this.state.o1State}) 
+        this.setState({o1Background:'#4cc1df',o1Color:'white',o1State:!this.state.o1State}) 
       } else {this.setState({o1Background:'white',o1Color:'black',o1State:!this.state.o1State})}
       if(this.state.o2State === true) {
         this.setState({o2Background:'white',o2Color:'black',o2State:!this.state.o2State})
@@ -44,7 +44,7 @@ class Option extends PureComponent {
     // Target Two
     else if (target === 'two') {
       if(!this.state.o2State) {
-        this.setState({o2Background:'#0074D9',o2Color:'white',o2State:!this.state.o2State}) 
+        this.setState({o2Background:'#4cc1df',o2Color:'white',o2State:!this.state.o2State}) 
       } else {this.setState({o2Background:'white',o2Color:'black',o2State:!this.state.o2State})}
       if(this.state.o1State === true) {
         this.setState({o1Background:'white',o1Color:'black',o1State:!this.state.o1State})
@@ -55,34 +55,28 @@ class Option extends PureComponent {
   render () {
     return (
       <div>
-      <Button 
-      text={this.props.o1}
-        func={_=>{
-          this.changeColor('one');
-        }}
-        special={
-          {
+        <Button 
+          text={this.props.o1}
+          func={_=>{this.changeColor('one');}}
+          special={{
             backgroundColor:this.state.o1Background,
             color:this.state.o1Color,
-            width:'100px',
-            height:'32px',
-            margin:'6px 2px 6px 0px',
-          }
-        }/>
-      <Button 
-        text={this.props.o2}
-        func={_=>{
-          this.changeColor('two')
-        }}
-        special={
-          {
+            width:'90px',
+            height:'25px',
+            margin:'5px 1px 5px 0px',
+          }}
+        />
+        <Button 
+          text={this.props.o2}
+          func={_=>{this.changeColor('two')}}
+          special={{
             backgroundColor:this.state.o2Background,
             color:this.state.o2Color,
-            width:'100px',
-            height:'32px',
-            margin:'6px 0px 6px 2px',
-          }
-        }/>
+            width:'90px',
+            height:'25px',
+            margin:'5px 0px 5px 1px',
+          }}
+        />
       </div>
     )
   }

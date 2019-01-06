@@ -14,26 +14,32 @@ import styles from '../styles';
 // used to do special styling on generic comps
 
 // a generic / standard Link used to standardize Links
-let Link = (props) => {
-  return (
-    <div style={[
-      styles.uiLinkDiv.base,
-      props.specialDiv
-    ]}>
-      <em>
-        <a
-        className='ui-link'
-        href={props.link ? props.link : null}
-        target={'_blank'}
-        style={[
-          styles.uiLink.base,
-          props.special
-        ]}
-        >{props.text}
-        </a>
-      </em>
-    </div>
-  )
+class Link extends PureComponent {
+  constructor (props) {
+    super(props);
+  }
+
+  render () {
+    return (
+      <div style={[
+        styles.div.base,
+        this.props.specialDiv
+      ]}>
+        <em>
+          <a
+          className='ui-link'
+          href={this.props.link ? this.props.link : null}
+          target={'_blank'}
+          style={[
+            styles.uiLink.base,
+            this.props.special
+          ]}
+          >{this.props.text}
+          </a>
+        </em>
+      </div>
+    )
+  }
 }
 
 Link.propTypes = {

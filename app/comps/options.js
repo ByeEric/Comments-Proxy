@@ -22,15 +22,16 @@ class Options extends PureComponent {
         <Option o1={'toy box'} o2={'none'} default={'two'}/>
         <Button 
           text={'finish'}
+          func={()=>{console.log('finished purchase...\nmake this do something if you want to...')}}
           special={{
-            width:'214px',
+            width:'192px',
             height:'35px',
             margin:'10px 0px 0px 0px',
             borderColor:'#FFA500',
             fontSize:'19px',
             fontStyle:'italic',
-            ":hover":{backgroundColor:'#FFA500'}}}
-          func={()=>{console.log('finished purchase...\nmake this do something if you want to...')}}
+            ":hover":{backgroundColor:'#FFA500'}
+          }}
         />
       </div>
     )

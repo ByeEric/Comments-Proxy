@@ -8,6 +8,8 @@
     "go-server": "go run server.go",
     "node-server": "node server.js",
     "test": "jest --detectOpenHandles",
+    "setup": "pm2 deploy ecosystem.config.js production setup",
+    "production": "pm2 deploy ecosystem.config.js production",
     "start": "npm install; webpack"
   },
   "repository": {

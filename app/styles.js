@@ -1,4 +1,3 @@
-
 // Javascript styling object
 // used as a sort of global style object
 const styles = {
@@ -8,7 +7,7 @@ const styles = {
       outline:'none',
       borderRadius:'5px',
       borderWidth:'1px',
-      borderColor:'#0074D9',
+      borderColor:'#4cc1df',
       fontSize:'17px',
       fontFamily:'Raleway, sans-serif',
       transitionDuration:'0.3s',
@@ -18,7 +17,7 @@ const styles = {
     primary: {
       display:'inline-block',
       ":hover": {
-        backgroundColor:'#0074D9',
+        backgroundColor:'#4cc1df',
         color:'white'
       },
     },
@@ -42,6 +41,7 @@ const styles = {
       cursor:'pointer',
       textDecoration:'none',
       color:'black',
+      display:'inline-block',
       ":hover": {
         color:'#FF4136',
       },
@@ -90,7 +90,7 @@ const styles = {
   disclaimerDiv: {
     base: {
       margin:'10px',
-      width:'20%',
+      width:'80%',
       fontFamily:'Thasadith, sans-serif',
       fontSize:'6px',
       fontWeigth:'200',
@@ -106,37 +106,7 @@ const styles = {
       padding:'2px',
       display:'inline-block',
       ":hover": {
-        color:'#0074D9',
-      },
-    },
-  },
-  // Options Div
-  optionsDiv: {
-    base: {
-      margin:'10px',
-    }
-  },
-  // Button Options
-  toggle: {
-    base: {
-      width:'75px',
-      height:'30px',
-      outline:'none',
-      margin:'3px',
-      borderRadius:'5px',
-      borderWidth:'1px',
-      borderColor:'#0074D9',
-      fontSize:'17px',
-      fontFamily:'Raleway, sans-serif',
-      transitionDuration:'0.3s',
-      cursor:'pointer',
-      display:'inline-block'
-    },
-    primary: {
-      display:'inline-block',
-      ":hover": {
-        backgroundColor:'#0074D9',
-        color:'white'
+        color:'#4cc1df',
       },
     },
   },
@@ -162,29 +132,71 @@ const styles = {
       padding:'0%'
     }
   },
-  // finish button
-  finish: {
+  info: {
     base: {
-      width:'214px',
-      height:'35px',
-      outline:'none',
-      margin:'10px 0px 0px 4px',
-      borderRadius:'5px',
-      borderWidth:'1px',
-      borderColor:'#FFA500',
-      fontSize:'19px',
       fontFamily:'Raleway, sans-serif',
-      transitionDuration:'0.3s',
-      cursor:'pointer',
+      margin:'0px 0px 0px 10px',
+      fontSize:'12px',
       display:'inline-block',
-    }, 
+      animationFillMode:'forwards',
+      animationIterationCount:'1',
+    }
+  },
+  infoDiv: {
+    base: {
+      margin:'0px',
+      padding:'0px'
+    }
+  },
+  petInfo: {
+    base: {
+      display:'inline-block'
+    }
+  },
+  purchase: {
+    base: {
+      marginTop:'50px',
+      display:'inline-block',
+      width:'30%',
+      height:'500px',
+    }
+  },
+  logo: {
+    base: {
+      display:'block',
+      marginLeft:'auto',
+      marginRight:'auto',
+      padding:'0%',
+      width:'20%'
+    }
+  },
+  petImageDiv: {
+    base: {
+      marginLeft:'10%',
+      display:'inline',
+      borderRadius:'30px',
+    }
+  },
+  petImage: {
+    base: {
+      display:'inline-block',
+      borderRadius:'5%',
+    }
+  },
+  description: {
+    base: {
+      width:'50%',
+      marginLeft:'15%',
+      fontFamily:'Raleway, sans-serif',
+      fontSize:'14px',
+      display:'inline-block',
+    },
     primary: {
       display:'inline-block',
-      ":hover": {
-        backgroundColor:'#FFA500',
-        color:'white'
-      },
-    },
+      float:'left',
+      width:'70%',
+      height:'500px',
+    }
   }
 }
 
