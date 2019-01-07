@@ -9,7 +9,7 @@ import Link from './link';
 import styles from '../styles';
 
 // Displays item details much like a title
-class Title extends PureComponent {
+class Title extends Component {
   constructor (props) {
     super(props);
     this.state = {

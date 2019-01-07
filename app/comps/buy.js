@@ -12,7 +12,7 @@ import Title from './title';
 import styles from '../styles';
 import Price from './price';
 
-class Buy extends PureComponent {
+class Buy extends Component {
   constructor (props) {
     super(props);
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Radium from 'radium';
 
@@ -8,7 +7,7 @@ import PetDescription from './pet_description';
 import styles from '../styles';
 
 
-class PetInfo extends React.Component {
+class PetInfo extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -21,10 +20,21 @@ class PetInfo extends React.Component {
   }
 
   componentDidMount() {
-    console.log('mounted')
+    axios.get(`http://ec2-52-90-48-243.compute-1.amazonaws.com:3000/api/info/${this.props.pet_id}`)
+    .then((response) => {
+      this.setState({
+        genus: response.data.genus,
+        species: response.data.species,
+        description: response.data.description,
+        image_url: response.data.image_url
+      })
+    })
+  }
+
+  componentDidUpdate () {
+    console.log('pet_info updated')
     axios.get(`http://ec2-52-90-48-243.compute-1.amazonaws.com:3000/api/info/${this.props.pet_id}`)
       .then((response) => {
-      console.log('response to initial GET: ', response.data);
       this.setState({
         genus: response.data.genus,
         species: response.data.species,

@@ -5,7 +5,7 @@ import styles from '../styles';
 
 let PetDescription = (props) => {
   return (
-    <div>
+    <div className={'describe'}>
       <p style={[styles.description.base]}>{props.description}</p>
     </div>
   )

@@ -6,7 +6,7 @@ import styles from '../styles';
 // a generic / standard Button used to standardize buttons
 
 // takes a text |string| #
-// takes a func |function| #
+// takes a func |function|
 // takes a special |object|
 // takes a specialDiv |object|
 
@@ -27,14 +27,14 @@ class Link extends PureComponent {
       ]}>
         <em>
           <a
-          className='ui-link'
-          href={this.props.link ? this.props.link : null}
-          target={'_blank'}
-          style={[
-            styles.uiLink.base,
-            this.props.special
-          ]}
-          >{this.props.text}
+            href={this.props.link ? this.props.link : null}
+            onClick={this.props.func}
+            target={'_blank'}
+            style={[
+              styles.uiLink.base,
+              this.props.special
+            ]}>
+          {this.props.text}
           </a>
         </em>
       </div>

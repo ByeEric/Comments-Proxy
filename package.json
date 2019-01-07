@@ -26,9 +26,11 @@
     "axios": "^0.18.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "moment": "^2.23.0",
     "prop-types": "^15.6.2",
     "radium": "^0.25.1",
     "react": "^16.6.3",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3"
   },
   "devDependencies": {

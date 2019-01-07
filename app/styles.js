@@ -204,7 +204,8 @@ const styles = {
   product: {
     base: {
       marginTop:'30px',
-      marginBottom:'100px',
+      height:'100%',
+      display:'block',
     }
   }
 }
