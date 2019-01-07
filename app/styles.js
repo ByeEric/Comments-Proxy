@@ -84,9 +84,9 @@ const styles = {
   disclaimer: {
     base: {
       fontFamily:'Thasadith, sans-serif',
-      fontSize:'12px',
+      fontSize:'14px',
       fontWeigth:'500',
-      width:'60%',
+      width:'70%',
       margin:'10px',
     },
   },
@@ -96,7 +96,6 @@ const styles = {
       margin:'10px',
       width:'80%',
       fontFamily:'Thasadith, sans-serif',
-      fontSize:'6px',
       fontWeigth:'200',
     },
   },
